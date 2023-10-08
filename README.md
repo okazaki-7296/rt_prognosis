@@ -33,3 +33,24 @@
   <li>損失関数として平均二乗対数誤差、最適化アルゴリズムとしてRMSPropを採用した。ミニバッチ法(バッチサイズ：10)を用いて学習を実行した。エポック数を500とし、アーリーストッピング法を用いて損失関数の最小化を得られた時点で学習終了とした。</li>
   <li>モデル学習後にSHAPライブラリを用いて各特徴量のSharpley値を算出し、平均Sharpley値の高い10項目を抽出して、再度ニューラルネットワークモデルの構築を行った。学習終了後のモデルデータを本ツールに組み込んでいる。</li>
 </ul>
+
+# 結果
+## すべての特徴量を使用したモデル
+<ul>
+  <li>エポック数：108回で学習終了した。最終的な損失関数の値は訓練データで1.1366、検証データで1.9761と、わずかに過学習の傾向があった。</li>
+  <img src="https://raw.githubusercontent.com/okazaki-7296/rt_prognosis/main/loss_normalmodel.png">
+  <li>予測値と実測値の差が大きい症例が少なからずいたが、約4割の症例では±50日の精度で予後を予測した。(散布図では青色：訓練データ、橙色：テストデータを示している)</li>
+  <img src="https://raw.githubusercontent.com/okazaki-7296/rt_prognosis/main/scatter_normalmodel.png">
+  <img src="https://raw.githubusercontent.com/okazaki-7296/rt_prognosis/main/histogram_normalmodel.png">
+  <li>高Sharpley値を得たのはPerformance Statusや非ホジキンリンパ腫であること、リンパ節転移の有無、性別などであった。</li>
+  <img src="https://raw.githubusercontent.com/okazaki-7296/rt_prognosis/main/shap_result.png">
+</ul>
+
+## 特徴量を絞った軽量モデル (本ツールで使用しているモデル)
+<ul>
+  <li>エポック数：173回で学習終了した。最終的な損失関数の値は訓練データで1.4153、検証データで1.4478と、両者に差は見られなかった。</li>
+  <img src="https://raw.githubusercontent.com/okazaki-7296/rt_prognosis/main/loss_lightmodel.png">
+  <li>やや過小評価して予測値を出力する傾向があるが概ね予測精度は保たれていると考えられた。(散布図では青色：訓練データ、橙色：テストデータを示している)</li>
+  <img src="https://raw.githubusercontent.com/okazaki-7296/rt_prognosis/main/scatter_lightmodel.png">
+  <img src="https://raw.githubusercontent.com/okazaki-7296/rt_prognosis/main/histogram_lightmodel.png">
+</ul>
