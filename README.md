@@ -31,7 +31,7 @@
   <li>最初に、各特徴量を数値データ、カテゴリデータ、および血液検査データの3つの異なるカテゴリに分割した。それぞれのデータカテゴリに対して個別のニューラルネットワークを構築した。数値データと血液検査データに対しては、データの標準化を最初に実行した。それぞれのニューラルネットワークでは、バッチ正規化を適用してから全結合層に接続した。活性化関数としてReLU関数を採用し、全結合層の後にDropOut層を挿入した。血液検査データのニューラルネットワークには、リカレントニューラルネットワークの1つであるGRUを組み込んだ。そして、各ニューラルネットワークを結合し、6つの全結合層を経て最終的な出力を生成するモデルを構築した。</li>
   <img src="https://raw.githubusercontent.com/okazaki-7296/rt_prognosis/main/img/nn_model.png" widht="300px" alt="ニューラルネットワークの概略図">
   <li>損失関数として平均二乗対数誤差、最適化アルゴリズムとしてRMSPropを採用した。ミニバッチ法(バッチサイズ：10)を用いて学習を実行した。最大エポック数を500と設定し、アーリーストッピング法を用いて損失関数の最小化を得られた時点で学習終了とした。</li>
-  <li>モデル学習後にSHAPライブラリを用いて各特徴量のSharpley値を算出し、平均Sharpley値の高い10項目を抽出して、再度ニューラルネットワークモデルの構築を行った。学習終了後のモデルデータを本ツールに組み込んでいる。</li>
+  <li>モデル学習後にSHAPライブラリを用いて各特徴量のShapley値を算出し、平均Shapley値の高い10項目を抽出して、再度ニューラルネットワークモデルの構築を行った。学習終了後のモデルデータを本ツールに組み込んでいる。</li>
 </ul>
 
 # 結果
@@ -42,7 +42,7 @@
   <li>予測値と実測値の差が大きい症例が少なからずいたが、約4割の症例では±50日の精度で予後を予測した。(散布図では青色：訓練データ、橙色：テストデータを示している)</li>
   <img src="https://raw.githubusercontent.com/okazaki-7296/rt_prognosis/main/img/scatter_normalmodel.png">
   <img src="https://raw.githubusercontent.com/okazaki-7296/rt_prognosis/main/img/histogram_normalmodel.png">
-  <li>高Sharpley値を得たのはPerformance Statusや非ホジキンリンパ腫であること、リンパ節転移の有無、性別などであった。</li>
+  <li>高Shapley値を得たのはPerformance Statusや非ホジキンリンパ腫であること、リンパ節転移の有無、性別などであった。</li>
   <img src="https://raw.githubusercontent.com/okazaki-7296/rt_prognosis/main/img/shap_result.png">
 </ul>
 
