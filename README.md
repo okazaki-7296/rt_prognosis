@@ -1,5 +1,6 @@
 # 概要
-対症的放射線治療を予後を予測するためのツールです。<a href="https://colab.research.google.com/github/okazaki-7296/rt_prognosis/blob/main/predict_prognosis.ipynb">こちら</a>から使用できます。<br>
+対症的放射線治療を予後を予測するためのツールです。<br>
+<a href="[https://colab.research.google.com/github/okazaki-7296/rt_prognosis/blob/main/predict_prognosis.ipynb](https://huggingface.co/spaces/s-okazaki/prognosis_palliativeRT)">HuggingFace</a>で使用できます。<br>
 質問に対する回答を記入してからプログラムを実行してください。<br>
 # 背景
 <ul>
