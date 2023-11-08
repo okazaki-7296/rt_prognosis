@@ -1,7 +1,6 @@
 # 概要
 対症的放射線治療を予後を予測するためのツールです。<br>
-<a href="https://huggingface.co/spaces/s-okazaki/prognosis_palliativeRT">HuggingFace</a>で使用できます。<br>
-質問に対する回答を記入してからプログラムを実行してください。<br>
+<a href="https://huggingface.co/spaces/s-okazaki/prognosis_palliativeRT">HuggingFace</a>に登録していますので、そちらから使用してください。<br>
 # 背景
 <ul>
   <li>放射線治療は根治目的だけでなく、がんによる疼痛や神経障害、出血、醜形などの症状を緩和する目的でも行われる。</li>
